@@ -1,30 +1,31 @@
 <?php
 
 function timeGreet($hour = -1) {
-    switch($hour){
-    	case < 0:
+    switch(true){
+    	case $hour < 0:
     		$greet = "Good Day!";
     		break;
-    	case < 6:
+    	case $hour < 6:
     		$greet = "Wow its early/late";
     		break;
-    	case < 12:
+    	case $hour < 12:
     		$greet = "Good Morning!";
     		break;
-    	case < 17:
+    	case $hour < 17:
     		$greet = "Good Afternoon!";
     		break;
-    	case < 24:
+    	case $hour < 24:
     		$greet = "Good Night!";
     		break;
     }
 
-    echo "<p>$greet</p>";
+    return $greet;
 
 }
 
 $currHour = date(G);
 
-timeGreet($currHour);
+$greeting = timeGreet($currHour);
 
+echo "<p>$greeting</p>";
 ?>
